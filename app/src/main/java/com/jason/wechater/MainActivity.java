@@ -5,15 +5,11 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.jason.wechater.bean.ConverBean;
 import com.jason.wechater.common.ActionItem;
@@ -78,7 +74,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         public void onItemClick(ActionItem item, int position) {
             switch(position) {
                 case 0: //设备通讯
-                  //  ChatActivity1.startActivity(MainActivity.this,"设备1");
+                  //  ChatActivity.startActivity(MainActivity.this,"设备1");
                     showDialog();
                     break;
             }
@@ -196,7 +192,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
             public void onClick(View v) {
                 String msg = "设备" + editText.getText().toString();
                 mHomeFragment.addConver(new ConverBean(msg));
-                ChatActivity1.startActivity(MainActivity.this,msg);
+                ChatActivity.startActivity(MainActivity.this,msg);
                 dialog.dismiss();
             }
         });
