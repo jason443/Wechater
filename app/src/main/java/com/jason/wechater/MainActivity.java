@@ -1,5 +1,7 @@
 package com.jason.wechater;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
@@ -45,6 +47,10 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     private int index;
     private int currentTabIndex;// 当前fragment的index
 
+    public static void startActivity(Context context) {
+        Intent intent = new Intent(context,MainActivity.class);
+        context.startActivity(intent);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
