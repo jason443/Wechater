@@ -5,6 +5,7 @@
     android:background="@color/bar_color" >
 
     <ImageView
+        android:onClick="onBack"
         android:id="@+id/title_iv_left"
         android:layout_width="40dp"
         android:layout_height="22dp"

@@ -16,12 +16,21 @@ public class UserBean {
      * 手机 : 13533241542
      */
 
+
+
     private String 类型;
     private String 昵称;
     private String 性别;
-    private int 年龄;
+    private String 年龄;
     private String 生日;
-    private long 手机;
+    private String 手机;
+    /**
+     * 设备序列号 : abcdefghijklmnopqrstuvwxyz
+     * HMI设备绘图 : 12789.txt
+     */
+
+    private String 设备序列号;
+    private String HMI设备绘图;
 
     public String get类型() {
         return 类型;
@@ -47,12 +56,20 @@ public class UserBean {
         this.性别 = 性别;
     }
 
-    public int get年龄() {
+    public String get年龄() {
         return 年龄;
     }
 
-    public void set年龄(int 年龄) {
+    public void set年龄(String 年龄) {
         this.年龄 = 年龄;
+    }
+
+    public String get手机() {
+        return 手机;
+    }
+
+    public void set手机(String 手机) {
+        this.手机 = 手机;
     }
 
     public String get生日() {
@@ -63,11 +80,20 @@ public class UserBean {
         this.生日 = 生日;
     }
 
-    public long get手机() {
-        return 手机;
+
+    public String get设备序列号() {
+        return 设备序列号;
     }
 
-    public void set手机(long 手机) {
-        this.手机 = 手机;
+    public void set设备序列号(String 设备序列号) {
+        this.设备序列号 = 设备序列号;
+    }
+
+    public String getHMI设备绘图() {
+        return HMI设备绘图;
+    }
+
+    public void setHMI设备绘图(String HMI设备绘图) {
+        this.HMI设备绘图 = HMI设备绘图;
     }
 }

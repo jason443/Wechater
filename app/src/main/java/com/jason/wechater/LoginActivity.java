@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.jason.wechater.bean.LoginBean;
+import com.jason.wechater.manager.UserManager;
 import com.jason.wechater.util.CommonParser;
 
 import org.json.JSONArray;
@@ -75,6 +76,8 @@ public class LoginActivity extends FragmentActivity{
         Log.d(TAG, "onLogin: " + account + "/" + password);
         if (checkLogin(account,password)) {
 //            Toast.makeText(this,"登录成功",Toast.LENGTH_SHORT).show();
+            LoginBean loginBean = new LoginBean(account,password);
+            UserManager.getInstance().setLoginBean(loginBean);
             MainActivity.startActivity(this);
         } else {
             Toast.makeText(this,"登录失败",Toast.LENGTH_SHORT).show();

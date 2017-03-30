@@ -3,45 +3,46 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <include layout="@layout/layout_title"/>
     <LinearLayout
         android:layout_margin="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <ImageView
-            android:id="@+id/me_iv_avatar"
+            android:id="@+id/detail_iv_avatar"
             android:src="@mipmap/ic_launcher"
             android:layout_width="50dp"
             android:layout_height="50dp" />
         <TextView
-            android:id="@+id/me_tv_name"
+            android:id="@+id/detail_tv_name"
             android:textSize="16sp"
             android:text="HuangyishengB"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </LinearLayout>
     <TextView
-        android:id="@+id/me_tv_gender"
+        android:id="@+id/detail_tv_gender"
         android:layout_margin="10dp"
         android:textSize="16sp"
         android:text="性别：男"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <TextView
-        android:id="@+id/me_tv_age"
+        android:id="@+id/detail_tv_age"
         android:layout_margin="10dp"
         android:textSize="16sp"
         android:text="年龄：11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <TextView
-        android:id="@+id/me_tv_birthday"
+        android:id="@+id/detail_tv_birthday"
         android:layout_margin="10dp"
         android:textSize="16sp"
         android:text="生日：7月11日"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <TextView
-        android:id="@+id/me_tv_phone"
+        android:id="@+id/detail_tv_phone"
         android:layout_margin="10dp"
         android:textSize="16sp"
         android:text="手机：1353324151"

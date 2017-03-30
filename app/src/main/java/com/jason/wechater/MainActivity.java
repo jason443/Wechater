@@ -191,24 +191,24 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     }
 
     private void showDialog() {
-        dialog = new CustomDialog(this);
-        final EditText editText = (EditText) dialog.getEditText();//方法在CustomDialog中实现
-        dialog.setOnPositiveListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String msg = "设备" + editText.getText().toString();
-                mHomeFragment.addConver(new ConverBean(msg));
-                ChatActivity.startActivity(MainActivity.this,msg);
-                dialog.dismiss();
-            }
-        });
-        dialog.setOnNegativeListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.dismiss();
-            }
-        });
-        dialog.show();
+//        dialog = new CustomDialog(this);
+//        final EditText editText = (EditText) dialog.getEditText();//方法在CustomDialog中实现
+//        dialog.setOnPositiveListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                String msg = "设备" + editText.getText().toString();
+//                mHomeFragment.addConver(new ConverBean(msg));
+//                ChatActivity.startActivity(MainActivity.this,msg);
+//                dialog.dismiss();
+//            }
+//        });
+//        dialog.setOnNegativeListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                dialog.dismiss();
+//            }
+//        });
+//        dialog.show();
     }
 
 }

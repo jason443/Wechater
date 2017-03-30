@@ -2,6 +2,7 @@ package com.jason.wechater.manager;
 
 import android.content.Context;
 
+import com.jason.wechater.bean.LoginBean;
 import com.jason.wechater.bean.UserBean;
 
 /**
@@ -13,6 +14,7 @@ public class UserManager {
     private static final String TAG = UserManager.class.getSimpleName();
     private static UserManager mUserManager;
     private UserBean userBean;
+    private LoginBean loginBean;
 
     public static UserManager getInstance() {
         if (mUserManager == null) {
@@ -25,11 +27,19 @@ public class UserManager {
         return mUserManager;
     }
 
-    public UserBean getUserBean() {
+    public  UserBean getUserBean() {
         return userBean;
     }
 
     public void setUserBean(UserBean userBean) {
         this.userBean = userBean;
+    }
+
+    public LoginBean getLoginBean() {
+        return loginBean;
+    }
+
+    public void setLoginBean(LoginBean loginBean) {
+        this.loginBean = loginBean;
     }
 }

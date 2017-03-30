@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.jason.wechater.R;
 import com.jason.wechater.bean.ConverBean;
 import com.jason.wechater.bean.MsgBean;
+import com.jason.wechater.bean.UserBean;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,20 +21,20 @@ import java.util.List;
 
 public class MsgAdapter extends BaseAdapter {
 
-    private List<ConverBean> mConverBeans;
+    private List<UserBean> mUserBean;
 
-    public MsgAdapter(List<ConverBean> mConverBeans) {
-        this.mConverBeans = mConverBeans;
+    public MsgAdapter(List<UserBean> mUserBean) {
+        this.mUserBean = mUserBean;
     }
 
     @Override
     public int getCount() {
-        return mConverBeans.size();
+        return mUserBean.size();
     }
 
     @Override
-    public ConverBean getItem(int position) {
-        return mConverBeans.get(position);
+    public UserBean getItem(int position) {
+        return mUserBean.get(position);
     }
 
     @Override
@@ -43,7 +44,7 @@ public class MsgAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        ConverBean converBean = getItem(position);
+        UserBean userBean = getItem(position);
         View view;
         ViewHolder viewHolder = new ViewHolder();
         if (convertView == null) {
@@ -54,7 +55,7 @@ public class MsgAdapter extends BaseAdapter {
             view = convertView;
             viewHolder = (ViewHolder) view.getTag();
         }
-        viewHolder.mTvName.setText(converBean.getEquipmentName());
+        viewHolder.mTvName.setText(userBean.get昵称());
         return view;
     }
 

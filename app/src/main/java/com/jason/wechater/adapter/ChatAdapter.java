@@ -53,7 +53,7 @@ public class ChatAdapter extends BaseAdapter{
         if (getItemViewType(position) == TYPE_TEXT) {
             TextViewHolder viewHolder;
             if (convertView == null || convertView.getTag() instanceof PhotoViewHolder) {
-                view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_msg,parent,false);
+                view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_chat_msg,parent,false);
                 viewHolder = new TextViewHolder();
                 viewHolder.leftMsg = (TextView) view.findViewById(R.id.left_msg);
                 viewHolder.rightMsg = (TextView) view.findViewById(R.id.right_msg);

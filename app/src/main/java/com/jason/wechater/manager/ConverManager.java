@@ -1,4 +1,4 @@
-package com.jason.wechater.db;
+package com.jason.wechater.manager;
 
 import com.jason.wechater.bean.ConverBean;
 

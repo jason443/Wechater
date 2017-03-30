@@ -12,11 +12,16 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.jason.wechater.MainActivity;
+import com.jason.wechater.Chat1Activity;
+import com.jason.wechater.EquipmentActivity;
 import com.jason.wechater.R;
 import com.jason.wechater.adapter.MsgAdapter;
+import com.jason.wechater.bean.ContactBean;
 import com.jason.wechater.bean.ConverBean;
-import com.jason.wechater.db.ConverManager;
+import com.jason.wechater.bean.UserBean;
+import com.jason.wechater.manager.ConverManager;
+import com.jason.wechater.manager.UserManager;
+import com.jason.wechater.util.DataLoader;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,8 +38,14 @@ public class HomeFragment extends Fragment implements View.OnClickListener, Adap
     public TextView errorText;
     private ListView lvContact;
     private MsgAdapter mAdapter;
-    private List<ConverBean> mConverBeans = new ArrayList<>();
+    private List<UserBean> mContacts;
+    private List<ContactBean> mContactList;
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        initData();
+    }
 
     @Nullable
     @Override
@@ -62,22 +73,30 @@ public class HomeFragment extends Fragment implements View.OnClickListener, Adap
         errorItem.setOnClickListener(this);
     }
 
-    public void addConver(ConverBean converBean) {
-        mConverBeans.add(converBean);
-        mAdapter.notifyDataSetChanged();
-    }
+
 
     private void initView() {
-        mConverBeans.addAll(ConverManager.getInstance().getConverBean());
-        mAdapter = new MsgAdapter(mConverBeans);
-        lvContact.setAdapter(mAdapter);
-        layout.findViewById(R.id.txt_nochat).setVisibility(View.VISIBLE);
-//        if (mConverBeans != null && mConverBeans.size() >0) {
-//            mAdapter = new MsgAdapter(mConverBeans);
-//            lvContact.setAdapter(mAdapter);
-//        } else {
-//            layout.findViewById(R.id.txt_nochat).setVisibility(View.VISIBLE);
-//        }
+        if (mContacts != null && mContacts.size() >0) {
+            mAdapter = new MsgAdapter(mContacts);
+            lvContact.setAdapter(mAdapter);
+            lvContact.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    if (mContacts.get(position).get类型().equals("人")) {
+                        Chat1Activity.startActivity(getContext(),mContactList.get(position).getAccount());
+                    } else {
+                        EquipmentActivity.startActvity(getContext(),mContacts.get(position));
+                    }
+                }
+            });
+        } else {
+            layout.findViewById(R.id.txt_nochat).setVisibility(View.VISIBLE);
+        }
+    }
+
+    private void initData() {
+        mContactList = DataLoader.getContactsList(UserManager.getInstance().getLoginBean().getAccount());
+        mContacts = DataLoader.getContacts(UserManager.getInstance().getLoginBean().getAccount());
     }
 
     @Override
